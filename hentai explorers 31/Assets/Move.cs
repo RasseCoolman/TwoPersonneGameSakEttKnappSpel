@@ -6,6 +6,7 @@ public class PlayerScript : MonoBehaviour
 {
     [SerializeField] private float speed = 5f;
 
+    [SerializeField] private Transform armPivot;
     // Gun Variabels 
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firingPoint;
@@ -31,7 +32,7 @@ public class PlayerScript : MonoBehaviour
 
         float angle = Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x) * Mathf.Rad2Deg - 90f;
 
-        transform.localRotation = Quaternion.Euler(0, 0, angle);
+        armPivot.localRotation = Quaternion.Euler(0, 0, angle);
 
         if (Input.GetMouseButton(0))
         {
